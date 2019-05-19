@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+   <h1>결과입니다.</h1>
+   <h2>당신이 입력한 텍스트는 {{total}} 단어로 구성되어있습니다.</h2>
+
+   <a href="{% url 'home' %}">다시하기</a>
+   <h2>입력한 텍스트 : </h2>
+   {{fulltext}}
+   <h2>단어 카운트 : </h2>
+   <br>
+   {% for key, value in dictionary %}
+   {% if first == value %}
+   <strong> {{key}} - {{value}}</strong>
+   {% else %}
+   {{key}} - {{value}}
+   {% endif %}
+   <br>
+   {% endfor %}
+</body>
+</html>
